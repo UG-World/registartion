@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UG World - Social</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial, sans-serif;}
+
+body{
+  background:url('pexels-codioful-7135012.jpg') no-repeat center center/cover;
+  min-height:100vh;
+}
+
+/* NAV */
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 20px;
+  position:absolute;
+  width:100%;
+  top:0;
+}
+
+.logo-box{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.logo{
+  width:40px;
+  height:40px;
+  border-radius:10px;
+}
+
+.back-btn{
+  padding:8px 15px;
+  border:none;
+  border-radius:20px;
+  background:rgba(0,0,0,0.6);
+  color:white;
+  cursor:pointer;
+}
+
+/* CARDS CONTAINER */
+.container{
+  padding-top:100px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(2, 300px);
+  gap:25px;
+}
+
+.card{
+  background:rgba(255,255,255,0.2);
+  backdrop-filter:blur(5px);
+  border-radius:20px;
+  padding:20px;
+  display:flex;
+  align-items:center;
+  gap:15px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:scale(1.05);
+}
+
+.card img{
+  width:50px;
+  height:50px;
+}
+
+.card h3{
+  font-size:18px;
+}
+
+/* MOBILE */
+@media (max-width:600px){
+  .cards{
+    grid-template-columns:1fr;
+    width:90%;
+  }
+
+  .card{
+    padding:12px;
+    gap:10px;
+  }
+
+  .card img{
+    width:35px;
+    height:35px;
+  }
+
+  .card h3{
+    font-size:14px;
+  }
+}
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo-box">
+    <img src="logo.jpg" class="logo">
+    <span style="font-weight:600;">UG World</span>
+  </div>
+
+  <button class="back-btn" onclick="goBack()">Back</button>
+</nav>
+
+<!-- SOCIAL CARDS -->
+<div class="container">
+  <div class="cards">
+
+    <div class="card" onclick="openLink('https://instagram.com/_ug_world')">
+      <img src="instagram.png">
+      <h3>@_ug_world</h3>
+    </div>
+
+    <div class="card" onclick="openLink('https://twitter.com')">
+      <img src="twitter.png">
+      <h3>@ugworld</h3>
+    </div>
+
+    <div class="card" onclick="openLink('https://youtube.com')">
+      <img src="youtube.png">
+      <h3>UG World</h3>
+    </div>
+
+    <div class="card" onclick="openLink('https://wa.me')">
+      <img src="whatsapp.png">
+      <h3>WhatsApp</h3>
+    </div>
+
+  </div>
+</div>
+
+<script>
+function goBack(){
+  window.location.href = "index.html";
+}
+
+function openLink(url){
+  window.open(url, '_blank');
+}
+</script>
+
+</body>
+</html>
