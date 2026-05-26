@@ -142,7 +142,7 @@ button{
     <h2>Join as Partner</h2>
     <p>Become a part of UG World and build the future together 🚀</p>
 
-    <form action="https://formspree.io/f/mzdwjynn" method="POST" onsubmit="redirectHome(event)">
+    <form action="https://formspree.io/f/mzdwjynn" method="POST">
       <input type="text" name="name" placeholder="Your Name" required>
       <input type="email" name="email" placeholder="Email" required>
       <input type="tel" name="phone" placeholder="Phone Number" required>
@@ -169,6 +169,8 @@ button{
 
       <textarea name="message" placeholder="Why do you want to join UG World?" required></textarea>
 
+      <input type="hidden" name="_next" value="thank.html">
+
       <button type="submit">Apply Now</button>
     </form>
 
@@ -179,15 +181,13 @@ button{
 function goBack(){
   window.location.href = "index.html";
 }
-function redirectHome(e){
-  e.preventDefault();
-  window.location.href = "thank.html";
-}
+
 
 </script>
 
 </body>
 </html>
+
 
 
 
