@@ -49,12 +49,14 @@ nav{
 }
 
 .back-btn{
-  padding:3px 6px;
+  padding:8px 15px;
   border:none;
   border-radius:20px;
   background:rgba(0,0,0,0.6);
   color:white;
   cursor:pointer;
+  width:auto; /* fix full width issue */
+  display:inline-block;
 }
 
 /* CONTENT */
@@ -145,16 +147,20 @@ button{
       <input type="email" name="email" placeholder="Email" required>
       <input type="tel" name="phone" placeholder="Phone Number" required>
 
-      <select name="skill" required>
-        <option value="">Select Skill</option>
+      <select name="category" required>
+        <option value="">Select Category</option>
         <option>App Developer</option>
         <option>Web Developer</option>
-        <option>Frontend developer</option>
-        <option>Backend developer</option>
-        <option>Full stack developer</option>
       </select>
 
-      <select name="experience" required>
+      <select name="type" required>
+        <option value="">Select Type</option>
+        <option>Frontend Developer</option>
+        <option>Backend Developer</option>
+        <option>Full Stack Developer</option>
+      </select>
+
+      <select name="level" required>
         <option value="">Experience Level</option>
         <option>Beginner</option>
         <option>Intermediate</option>
@@ -175,14 +181,14 @@ function goBack(){
 }
 function redirectHome(e){
   e.preventDefault();
-  alert("Thank you for applying to UG World 🚀
-
-We have received your application successfully. Our team will review your details and contact you within 24 hours.");
+  window.location.href = "thank.html";
 }
 
 </script>
 
 </body>
 </html>
+
+
 
 
