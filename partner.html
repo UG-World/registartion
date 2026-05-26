@@ -130,7 +130,7 @@ button{
     <span style="font-weight:600;">UG World</span>
   </div>
 
-  <button class="back-btn" onclick="goBack()">Back</button>
+  
 </nav>
 
 <!-- FORM -->
@@ -139,27 +139,27 @@ button{
     <h2>Join as Partner</h2>
     <p>Become a part of UG World and build the future together 🚀</p>
 
-    <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Email" required>
-      <input type="tel" placeholder="Phone Number" required>
+    <form action="https://formspree.io/f/mzdwjynn" method="POST" onsubmit="redirectHome(event)">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="tel" name="phone" placeholder="Phone Number" required>
 
-      <select required>
-        <option value="">Select Skill</option>
-        <option>App Development</option>
-        <option>Web Development</option>
-        <option>Frontend</option>
-        <option>Backend</option>
+      <select name="skill" required>
+        <option value="">Select Skills</option>
+        <option>App Developer</option>
+        <option>Web Developer</option>
+        <option>Full stack developer</option>
+        <option>Frontent developer</option>
       </select>
 
-      <select required>
+      <select name="experience" required>
         <option value="">Experience Level</option>
         <option>Beginner</option>
         <option>Intermediate</option>
         <option>Advanced</option>
       </select>
 
-      <textarea placeholder="Why do you want to join UG World?" required></textarea>
+      <textarea name="message" placeholder="Why do you want to join team UG World?" required></textarea>
 
       <button type="submit">Apply Now</button>
     </form>
@@ -171,7 +171,13 @@ button{
 function goBack(){
   window.location.href = "index.html";
 }
+function redirectHome(e){
+  e.preventDefault();
+  window.location.href = "index.html";
+}
+
 </script>
 
 </body>
 </html>
+
