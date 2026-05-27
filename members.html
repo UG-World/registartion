@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>UG World - Members</title>
+<title>UG World - Team</title>
 
 <style>
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family:Arial, sans-serif;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 body{
@@ -30,17 +30,17 @@ nav{
 .logo-box{
   display:flex;
   align-items:center;
-  gap:8px;
+  gap:10px;
 }
 
 .logo{
-  width:40px;
-  height:40px;
-  border-radius:10px;
+  width:42px;
+  height:42px;
+  border-radius:12px;
 }
 
 .back-btn{
-  padding:8px 15px;
+  padding:8px 16px;
   border:none;
   border-radius:20px;
   background:rgba(0,0,0,0.6);
@@ -48,76 +48,99 @@ nav{
   cursor:pointer;
 }
 
-/* MAIN */
-.container{
+/* HEADER */
+.header{
+  text-align:center;
+  margin-top:40px;
+  padding:0 20px;
+}
+
+.header h1{
+  font-size:36px;
+}
+
+.header p{
+  margin-top:10px;
+  color:#333;
+  font-size:15px;
+}
+
+/* TEAM SECTION */
+.team-section{
   display:flex;
   flex-direction:column;
   align-items:center;
-  padding:30px 15px;
+  padding:40px 20px;
+  gap:30px;
 }
 
 /* CEO CARD */
-.ceo-card{
-  width:280px;
-  padding:20px;
+.ceo{
+  width:300px;
+  padding:25px;
   border-radius:20px;
   text-align:center;
-  background:linear-gradient(135deg,#ffd700,#fff2a8);
-  box-shadow:0 0 25px rgba(255,215,0,0.8);
-  margin-bottom:30px;
+  background:linear-gradient(135deg,#ffd700,#fff3b0);
+  box-shadow:0 0 30px rgba(255,215,0,0.8);
   cursor:pointer;
   transition:0.3s;
 }
 
-.ceo-card:hover{
-  transform:scale(1.05);
-  box-shadow:0 0 40px rgba(255,215,0,1);
+.ceo:hover{
+  transform:translateY(-5px) scale(1.05);
+  box-shadow:0 0 50px rgba(255,215,0,1);
 }
 
-.ceo-card img{
-  width:80px;
-  height:80px;
-  border-radius:15px;
+.ceo img{
+  width:90px;
+  height:90px;
+  border-radius:16px;
   margin-bottom:10px;
 }
 
-.ceo-card h3{
-  font-size:18px;
+.ceo h2{
+  font-size:20px;
 }
 
-.ceo-card p{
+.ceo span{
   font-size:13px;
 }
 
 /* TEAM GRID */
 .team{
   display:grid;
-  grid-template-columns:repeat(2, 200px);
-  gap:20px;
+  grid-template-columns:repeat(2, 250px);
+  gap:25px;
 }
 
-/* TEAM CARD */
-.card{
+/* MEMBER CARD */
+.member{
   padding:20px;
-  border-radius:20px;
+  border-radius:18px;
   text-align:center;
-  background:linear-gradient(135deg,#e0e0e0,#f5f5f5);
-  box-shadow:0 0 10px rgba(0,0,0,0.2);
+  background:rgba(255,255,255,0.25);
+  backdrop-filter:blur(6px);
+  transition:0.3s;
 }
 
-.card img{
-  width:70px;
-  height:70px;
-  border-radius:15px;
+.member:hover{
+  transform:translateY(-5px);
+}
+
+.member img{
+  width:75px;
+  height:75px;
+  border-radius:14px;
   margin-bottom:10px;
 }
 
-.card h3{
-  font-size:16px;
+.member h3{
+  font-size:17px;
 }
 
-.card p{
-  font-size:12px;
+.member p{
+  font-size:13px;
+  color:#333;
 }
 
 /* MOBILE */
@@ -127,8 +150,8 @@ nav{
     grid-template-columns:1fr;
   }
 
-  .ceo-card{
-    width:90%;
+  .header h1{
+    font-size:26px;
   }
 
 }
@@ -146,26 +169,32 @@ nav{
   <button class="back-btn" onclick="goBack()">Back</button>
 </nav>
 
-<!-- MEMBERS -->
-<div class="container">
+<!-- HEADER -->
+<div class="header">
+  <h1>Meet Our Team</h1>
+  <p>The minds behind UG World building the future of tech 🚀</p>
+</div>
+
+<!-- TEAM -->
+<div class="team-section">
 
   <!-- CEO -->
-  <div class="ceo-card" onclick="openGithub()">
+  <div class="ceo" onclick="openGithub()">
     <img src="ceo.jpg">
-    <h3>MR Utsav Gupta</h3>
-    <p>CEO & Founder</p>
+    <h2>Mr. Utsav Gupta</h2>
+    <span>CEO & Founder</span>
   </div>
 
   <!-- TEAM -->
   <div class="team">
 
-    <div class="card">
+    <div class="member">
       <img src="team1.jpg">
       <h3>Vivansh Gupta</h3>
       <p>Team Member</p>
     </div>
 
-    <div class="card">
+    <div class="member">
       <img src="team2.jpg">
       <h3>Coming Soon</h3>
       <p>New Member</p>
@@ -181,7 +210,7 @@ function goBack(){
 }
 
 function openGithub(){
-  window.open("https://github.com/", "_blank"); // yaha apna github link daal
+  window.open("https://github.com/", "_blank"); // apna github link daal
 }
 </script>
 
