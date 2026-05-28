@@ -1,548 +1,333 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>UG World - Services</title>
-
-  <!-- GOOGLE FONT -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <style>
-
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:"Poppins",sans-serif;
-    }
-
-    :root{
-      --primary:#3b82f6;
-      --secondary:#8b5cf6;
-      --cyan:#06b6d4;
-      --white:#ffffff;
-      --glass:rgba(255,255,255,0.08);
-      --border:rgba(255,255,255,0.12);
-      --text:#e2e8f0;
-      --muted:#94a3b8;
-      --pending:#f87171;
-    }
-
-    html{
-      scroll-behavior:smooth;
-    }
-
-    body{
-
-      background:
-      radial-gradient(circle at top left,#1e3c72 0%,transparent 30%),
-      radial-gradient(circle at bottom right,#2a5298 0%,transparent 30%),
-      linear-gradient(135deg,#020617,#0f172a,#111827,#1e293b);
-
-      min-height:100vh;
-      overflow-x:hidden;
-      color:var(--white);
-      position:relative;
-    }
-
-    body::before{
-      content:"";
-      position:fixed;
-      inset:0;
-      background-image:
-      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-      background-size:50px 50px;
-      z-index:-1;
-    }
-
-    /* NAVBAR */
-
-    nav{
-      width:100%;
-      height:85px;
-
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-
-      padding:0 40px;
-
-      position:sticky;
-      top:0;
-      z-index:1000;
-
-      backdrop-filter:blur(18px);
-      background:rgba(15,23,42,0.65);
-      border-bottom:1px solid rgba(255,255,255,0.08);
-    }
-
-    .nav-left{
-      display:flex;
-      align-items:center;
-      gap:14px;
-    }
-
-    .logo-box{
-      width:58px;
-      height:58px;
-      border-radius:18px;
-      overflow:hidden;
-      background:white;
-      box-shadow:
-      0 0 20px rgba(59,130,246,0.4),
-      0 0 40px rgba(139,92,246,0.2);
-    }
-
-    .logo-box img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-    }
-
-    .company-name{
-      font-size:1rem;
-      font-weight:600;
-      letter-spacing:0.5px;
-      background:black;
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-    }
-
-    /* CENTER NAV */
-
-    .nav-center{
-      display:flex;
-      align-items:center;
-      gap:18px;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UG World - Services</title>
 
-      position:absolute;
-      left:50%;
-      transform:translateX(-50%);
-    }
+<style>
 
-    .nav-link{
-      text-decoration:none;
-      color:var(--text);
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,sans-serif;
+}
 
-      padding:12px 22px;
-      border-radius:16px;
+body{
+  min-height:100vh;
 
-      font-size:0.95rem;
-      font-weight:600;
+  background:
+  linear-gradient(
+  135deg,
+  #f5f1e8,
+  #f8f5ef,
+  #ece7dc,
+  #f6f2ea);
 
-      transition:0.35s ease;
+  color:#111;
+}
 
-      background:rgba(255,255,255,0.04);
-      border:1px solid rgba(255,255,255,0.08);
+/* NAV */
 
-      position:relative;
-      overflow:hidden;
-    }
+nav{
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 
-    .nav-link::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:linear-gradient(135deg,#3b82f6,#8b5cf6);
-      opacity:0;
-      transition:0.35s;
-      z-index:-1;
-    }
+  padding:18px 25px;
+}
 
-    .nav-link:hover::before,
-    .nav-link.active::before{
-      opacity:1;
-    }
+.logo-side{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
 
-    .nav-link:hover{
-      transform:translateY(-3px);
-      box-shadow:0 15px 30px rgba(59,130,246,0.25);
-    }
+.logo{
+  width:42px;
+  height:42px;
+  border-radius:12px;
+}
 
-    .back-btn{
-      text-decoration:none;
-      color:white;
+.logo-name{
+  font-weight:600;
+  font-size:17px;
+}
 
-      padding:12px 22px;
-      border-radius:16px;
+/* NAV CENTER */
 
-      font-weight:600;
+.nav-center{
+  display:flex;
+  align-items:center;
+  gap:15px;
 
-      background:linear-gradient(135deg,#3b82f6,#06b6d4);
+  padding:10px 18px;
 
-      transition:0.35s ease;
+  border-radius:30px;
 
-      box-shadow:0 10px 25px rgba(59,130,246,0.3);
-    }
+  background:rgba(255,255,255,0.35);
+  backdrop-filter:blur(6px);
+}
 
-    .back-btn:hover{
-      transform:translateY(-3px) scale(1.03);
-      box-shadow:0 15px 35px rgba(59,130,246,0.4);
-    }
+.nav-btn{
+  text-decoration:none;
+  color:#111;
 
-    /* PAGE */
+  padding:10px 18px;
+  border-radius:20px;
 
-    .container{
-      width:100%;
-      padding:80px 25px;
-    }
+  transition:0.3s;
+}
 
-    .title{
-      text-align:center;
-      margin-bottom:70px;
-    }
+.nav-btn:hover{
+  background:rgba(0,0,0,0.08);
+}
 
-    .title h1{
-      font-size:4rem;
-      font-weight:900;
-      line-height:1.1;
+/* BACK BUTTON */
 
-      background:linear-gradient(to right,#60a5fa,#22d3ee,#c084fc);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-    }
+.back-btn{
+  text-decoration:none;
 
-    .title p{
-      margin-top:18px;
-      color:var(--muted);
-      font-size:1.05rem;
-      letter-spacing:0.5px;
-    }
+  background:black;
+  color:white;
 
-    /* GRID */
+  padding:10px 18px;
+  border-radius:20px;
 
-    .services-grid{
+  transition:0.3s;
+}
 
-      max-width:900px;
-      margin:auto;
+.back-btn:hover{
+  transform:scale(1.05);
+}
 
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+/* PAGE */
 
-      gap:35px;
-    }
+.container{
+  width:100%;
+  padding:40px 20px 80px;
+}
 
-    /* CARD */
+/* TITLE */
 
-    .card{
+.title{
+  text-align:center;
+  margin-bottom:50px;
+}
 
-      position:relative;
-      overflow:hidden;
+.title h1{
+  font-size:50px;
+  margin-bottom:12px;
+}
 
-      min-height:320px;
+.title p{
+  color:#555;
+  max-width:700px;
+  margin:auto;
+  line-height:1.6;
+}
 
-      border-radius:32px;
+/* CARDS */
 
-      background:rgba(255,255,255,0.07);
-      border:1px solid rgba(255,255,255,0.09);
+.services{
+  width:100%;
+  max-width:900px;
 
-      backdrop-filter:blur(18px);
+  margin:auto;
 
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
 
-      padding:40px;
+  gap:25px;
+}
 
-      transition:0.45s ease;
+.card{
+  background:rgba(255,255,255,0.35);
 
-      cursor:pointer;
-    }
+  backdrop-filter:blur(6px);
 
-    .card:hover{
-      transform:translateY(-12px) scale(1.02);
+  border-radius:25px;
 
-      border-color:rgba(96,165,250,0.4);
+  padding:30px;
 
-      box-shadow:
-      0 20px 50px rgba(0,0,0,0.45),
-      0 0 30px rgba(59,130,246,0.15);
-    }
+  text-align:center;
 
-    .card::before{
-      content:"";
-      position:absolute;
+  transition:0.3s;
+}
 
-      width:260px;
-      height:260px;
+.card:hover{
+  transform:translateY(-6px);
+}
 
-      background:linear-gradient(135deg,#3b82f6,#8b5cf6);
+.card img{
+  width:85px;
+  height:85px;
 
-      border-radius:50%;
+  border-radius:20px;
 
-      top:-120px;
-      right:-120px;
+  margin-bottom:18px;
+}
 
-      opacity:0.15;
-    }
+.card h2{
+  margin-bottom:10px;
+}
 
-    .card::after{
-      content:"";
-      position:absolute;
+.card p{
+  color:#555;
+  line-height:1.6;
+  margin-bottom:20px;
+}
 
-      inset:0;
+/* STATUS */
 
-      border-radius:32px;
+.status{
+  display:inline-block;
 
-      padding:1px;
+  padding:8px 18px;
 
-      background:linear-gradient(
-      135deg,
-      rgba(255,255,255,0.18),
-      rgba(255,255,255,0.02));
+  border-radius:20px;
 
-      -webkit-mask:
-      linear-gradient(#fff 0 0) content-box,
-      linear-gradient(#fff 0 0);
+  background:black;
+  color:white;
 
-      -webkit-mask-composite:xor;
-      mask-composite:exclude;
-    }
+  font-size:14px;
+}
 
-    /* LOGO */
+/* FOOTER */
 
-    .service-logo{
-      width:100px;
-      height:100px;
+footer{
+  text-align:center;
+  margin-top:70px;
+  color:#666;
+}
 
-      border-radius:28px;
-      overflow:hidden;
+/* MOBILE */
 
-      margin-bottom:28px;
+@media(max-width:768px){
 
-      background:white;
+  nav{
+    flex-direction:column;
+    gap:15px;
+  }
 
-      z-index:2;
+  .nav-center{
+    flex-wrap:wrap;
+    justify-content:center;
+  }
 
-      box-shadow:
-      0 12px 30px rgba(0,0,0,0.35),
-      0 0 25px rgba(59,130,246,0.15);
-    }
+  .title h1{
+    font-size:34px;
+  }
 
-    .service-logo img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-    }
+  .services{
+    grid-template-columns:1fr;
+  }
 
-    /* TEXT */
+}
 
-    .service-name{
-      font-size:1.5rem;
-      font-weight:700;
-
-      margin-bottom:18px;
-
-      z-index:2;
-      text-align:center;
-    }
-
-    .service-desc{
-      color:#cbd5e1;
-      font-size:0.95rem;
-      line-height:1.7;
-      text-align:center;
-
-      max-width:280px;
-
-      margin-bottom:24px;
-
-      z-index:2;
-    }
-
-    /* STATUS */
-
-    .status{
-      padding:10px 22px;
-      border-radius:50px;
-
-      font-size:0.9rem;
-      font-weight:700;
-
-      letter-spacing:0.5px;
-
-      z-index:2;
-    }
-
-    .pending{
-      background:rgba(239,68,68,0.15);
-      color:var(--pending);
-      border:1px solid rgba(248,113,113,0.35);
-
-      box-shadow:0 0 20px rgba(248,113,113,0.08);
-    }
-
-    /* FOOTER */
-
-    footer{
-      margin-top:90px;
-      text-align:center;
-      color:#94a3b8;
-      font-size:0.95rem;
-      padding-bottom:30px;
-    }
-
-    /* MOBILE */
-
-    @media(max-width:900px){
-
-      nav{
-        height:auto;
-        padding:20px;
-        flex-direction:column;
-        gap:20px;
-      }
-
-      .nav-center{
-        position:static;
-        transform:none;
-        flex-wrap:wrap;
-        justify-content:center;
-      }
-
-      .title h1{
-        font-size:2.4rem;
-      }
-
-      .title p{
-        font-size:0.95rem;
-      }
-
-      .services-grid{
-        grid-template-columns:1fr;
-      }
-
-      .card{
-        min-height:290px;
-      }
-
-      .company-name{
-        font-size:1.2rem;
-      }
-
-    }
-
-  </style>
+</style>
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
+<!-- NAV -->
 
-  <nav>
+<nav>
 
-    <div class="nav-left">
+  <div class="logo-side">
 
-      <div class="logo-box">
-        <img src="logo.jpg" alt="UG World Logo">
-      </div>
+    <img src="logo.jpg" class="logo">
 
-      <div class="company-name">
-        UG WORLD
-      </div>
-
+    <div class="logo-name">
+      UG World
     </div>
-
-    <!-- NAVIGATION -->
-
-    <div class="nav-center">
-
-      <a href="service.html" class="nav-link">
-        Services
-      </a>
-
-      <a href="entertainment.html" class="nav-link">
-        Entertainment
-      </a>
-
-      <a href="services.html" class="nav-link active">
-        Saas Tools
-      </a>
-
-    </div>
-
-    <a href="index.html" class="back-btn">
-      ← Back
-    </a>
-
-  </nav>
-
-  <!-- CONTENT -->
-
-  <div class="container">
-
-    <div class="title">
-
-      <h1>Our Services</h1>
-
-      <p>
-        Building next-generation digital experiences for creators,
-        businesses and future technology platforms.
-      </p>
-
-    </div>
-
-    <!-- SERVICES -->
-
-    <div class="services-grid">
-
-      <!-- CARD 1 -->
-
-      <div class="card">
-
-        <div class="service-logo">
-          <img src="UG-Academy.png" alt="">
-        </div>
-
-        <div class="service-name">
-          UG Academy
-        </div>
-
-        <div class="service-desc">
-         A academy where we teaching about "App" and "Web" development.
-        </div>
-
-        <div class="status pending">
-          Pending
-        </div>
-
-      </div>
-
-      <!-- CARD 2 -->
-
-      <div class="card">
-
-        <div class="service-logo">
-          <img src="UG Cuts.png" alt="">
-        </div>
-
-        <div class="service-name">
-          UG Cuts
-        </div>
-
-        <div class="service-desc">
-          A editing software for mobile .
-        </div>
-
-        <div class="status pending">
-          Pending
-        </div>
-
-      </div>
-
-    </div>
-
-    <!-- FOOTER -->
-
-    <footer>
-      © 2026 UG World. All Rights Reserved.
-    </footer>
 
   </div>
+
+  <div class="nav-center">
+
+    <a href="service.html" class="nav-btn">
+      Services
+    </a>
+
+    <a href="entertainment.html" class="nav-btn">
+      Entertainment
+    </a>
+
+    <a href="services.html" class="nav-btn">
+      Saas Tools
+    </a>
+
+  </div>
+
+  <a href="index.html" class="back-btn">
+    Back
+  </a>
+
+</nav>
+
+<!-- CONTENT -->
+
+<div class="container">
+
+  <div class="title">
+
+    <h1>Our Services</h1>
+
+    <p>
+      UG World is building modern digital products,
+      creative tools and educational platforms for the next generation.
+    </p>
+
+  </div>
+
+  <!-- SERVICES -->
+
+  <div class="services">
+
+    <!-- CARD 1 -->
+
+    <div class="card">
+
+      <img src="UG-Academy.png">
+
+      <h2>UG Academy</h2>
+
+      <p>
+        Learn App Development and Web Development
+        with practical real-world projects.
+      </p>
+
+      <div class="status">
+        Pending
+      </div>
+
+    </div>
+
+    <!-- CARD 2 -->
+
+    <div class="card">
+
+      <img src="UG Cuts.png">
+
+      <h2>UG Cuts</h2>
+
+      <p>
+        A modern editing software designed
+        for creators and mobile editors.
+      </p>
+
+      <div class="status">
+        Pending
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
 
 </body>
 </html>
